@@ -1,0 +1,12 @@
+
+
+
+Para poder acceder al código fuente de la pagina hacemos crtl+U
+
+
+-------------------------------------------------------------------
+id 	-----    nombre 	--------     Establece un identificador único a la etiqueta HTML. Sólo el mismo nombre una vez por documento.
+class 	-------     nombre 	-------------   Establece una clase (género) a una etiqueta HTML. Puede repetirse por documento.
+style 	--------   estilos CSS 	 -------------  Aplica propiedades CSS directamente al elemento HTML en cuestión.
+-------------------------------------------------------------------
+
