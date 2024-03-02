@@ -1,0 +1,96 @@
+
+Para comenzar con la creación de un formulario, el primer paso es indicar una etiqueta contenedora <form>, que incluirá toda la información que se quiere recoger en ese formulario:
+
+
+<form></form>
+
+De esta forma, incluso se pueden crear varias etiquetas <form> por página, pudiendo así crear varios formularios con diferentes objetivos, como por ejemplo, uno para realizar una búsqueda en la página, otro para dejar un comentario y otro para enviar un email al autor, etc.
+
+
+Atributo 	       Descripción 	                                                                                       Más información
+action 	           Dirección URL del backend al cuál se enviará la información obtenida en el formulario. 	
+method 	           Método HTTP de envío. GET a través de URL, POST para envío extenso de información. 	
+name 	           Nombre del formulario. Útil para identificar el formulario y procesar posteriormente. 	
+target 	           Nombre del lugar donde se abrirá el formulario. \_blank para nueva pestaña. 	
+enctype 	       Codificación para el envío del formulario. Importante para envío de archivos. 	                   Envío de archivos
+accept-charset 	   Fuerza a utilizar una codificación en los parámetros de texto del formulario. 	
+autocomplete 	   Activa on o desactiva off el autocompletado para todos los campos del formulario. 	
+novalidate 	       Desactiva la validación HTML5 del formulario.
+
+Aqui un ejemplo: 
+
+<form name="formulario" method="post" action="/send/"></form>
+
+Nótese que en este primer ejemplo se definen 3 atributos base en <form>:
+
+    El atributo name define el nombre del formulario para diferenciarlo de otros.
+    El atributo method define el método HTTP a utilizar. Usaremos GET cuando nos interese enviar datos a través de la URL. En caso contrario, POST.
+    El atributo action se usa para indicar la URL a donde se enviarán los datos cuando el usuario pulse el botón de enviar. En caso de omisión, se enviarán a la propia página actual, volviéndola a cargar. En este caso, se estarían enviando a la ruta absoluta https://dominio.com/send/.
+
+
+<form method="get" action="/search/" target="_blank" accept-charset="utf-8"></form>
+
+En este caso enviamos a través de método GET a la URL https://dominio.com/search/:
+
+    Se ha indicado el atributo target con valor _blank, esto significa que se abrirá en una nueva pestaña.
+    Se ha indicado el atributo accept-charset. Esto forzará a que el texto enviado en el formulario sea interpretado como codificación UTF8. Útil si tienes problemas de carácteres extraños o similar.
+
+
+ <form method="post" action="/saveform/" autocomplete="off" novalidate></form>
+
+
+ 
+    El atributo autocomplete indica el valor off. Por defecto, este atributo está a on. Desactivado, todos los campos del formulario no mostrarán sugerencias anteriores de autocompletado.
+    El atributo novalidate hará que el usuario pueda saltarse todas las validaciones HTML del mismo. Lo veremos más adelante en la sección de validaciones HTML.
+
+
+
+Para que un usuario pueda introducir información en un formulario, requiere que se le indiquen una serie de campos que le permitan introducir la información de la forma más cómoda y rápida posible. Para ello, debemos saber a priori que tipo de dato le vamos a pedir al usuario (texto, cantidades numéricas, fechas, etc...), y así saber que tipo de campo de entrada de datos es más conveniente utilizar.
+
+
+Información a obtener 	            Ejemplos 	                                      Etiqueta y atributo a utilizar
+Información de texto corto 	        Nombres, apellidos, textos cortos... 	                <input>
+Información de texto largo 	        Comentarios, observaciones... 	                       <textarea>
+Números o cantidades 	            Edades, precios, cuantías... 	                   <input type="number"> ó <input type="range">
+Fechas u horas 	                    Fecha de nacimiento, inicio de evento... 	        <input type="date"> o derivados
+Verdadero/falso 	                Si/No, Opción A/B, ON/OFF... 	                    <input type="checkbox">
+Opción única 	                    (Elegir una opción de 2 ó más posibles) 	           <input type="radio"> ó <select>
+Varias opciones 	                (Elegir varias opciones de 2 ó más posibles) 	        <select multiple> ó <input type="checkbox">
+Opción única abierta 	            (Elegir una opción o indicar una propia) 	                <datalist>
+Selección de color 	                (Escoger un color o tonalidad) 	                      <input type="color">
+Selección de archivo 	            (Escoger un archivo para enviar) 	                      <input type="file">
+
+
+En el siguiente formulario, establecemos dos etiquetas <input>, una de ellas para obtener información de texto y la otra para incorporar un botón para enviar los datos del formulario:
+
+
+<form name="userdata" method="post" action="/send/">
+  <input type="text" name="username">
+  <input type="submit">
+</form>
+
+
+En este ejemplo tenemos un pequeño formulario en el cuál:
+
+    Se pide al usuario su nombre con la etiqueta <input type="text">
+    Botón para permitir enviar el formulario con la etiqueta <input type="submit">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
