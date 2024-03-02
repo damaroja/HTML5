@@ -1,0 +1,39 @@
+
+Sintaxis ------ 	El código está mal escrito y es incorrecto. El navegador podría no mostrar correctamente ciertos detalles.
+
+Accesibilidad 	---------- El código no tiene porque estar mal escrito o ser incorrecto, sin embargo, tiene problemas que harán que no se vean bien en determinados dispositivos o que un usuario invidente o similar no pueda utilizarla.
+
+Posicionamiento (SEO) 	---------- El código no tiene porque estar mal escrito o ser incorrecto, sin embargo, los buscadores como Google no aceptarán favorablemente la página y podría tener un rendimiento menor de posicionamiento SEO.
+
+Rendimiento 	---------    El código no tiene porque estar mal escrito o ser incorrecto, sin embargo, el navegador puede ser lento a la hora de cargarlo o tardar en realizar sus tareas.
+
+Usabilidad 	  ------------   El código no tiene porque estar mal escrito o ser incorrecto, sin embargo, la forma en la que se disponen los elementos o está pensado puede frustrar al usuario final que utiliza la web.
+
+
+https://validator.w3.org/  ----  Para poder analizar la sintaxis de errores del documento HTML
+-------------------------------------------------------------------------------------------------
+Podemos usar esta herramienta de tres formas diferentes:
+
+    By URI: Indicando la URL de la página que se quiere validar. Obviamente, la página debe estar publicada en Internet.
+    By File upload: Seleccionando el archivo .html a analizar y subiéndolo al validador.
+    By Direct Input: Pegando directamente el código HTML que se quiere analizar en una casilla de texto.
+
+Además, si nos fijamos en la parte superior de la herramienta de validación, veremos que hay tres casillas disponibles para marcar, con las que podemos agregar nuevas características que se mostrarán tras la validación. Dichas características son las siguientes:
+
+    Source: Nos muestra el código fuente, numerado por líneas. Útil para corregir problemas sobre la marcha o comprobar los errores en las líneas especificadas.
+    Outline: Nos muestra una especie de árbol o esquema de la página.
+    Image report: Genera un informe de las imágenes del sitio web, con una miniatura y sus características asociadas.
+
+Es una muy buena práctica acostumbrarse a utilizar el validador para crear código HTML de calidad y sin errores, ya que si tenemos documentos sin errores de validación, es mucho más probable que se vean correctamente en cualquier tipo de dispositivo.
+
+
+
+
+
+
+
+
+
+
+
+
