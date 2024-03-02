@@ -1,0 +1,67 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+
+Los navegadores, antes de comenzar a dibujar una página web, lo primero que hacen es leer la línea donde se indica el tipo de documento del que se trata. De esta forma, el navegador ya está preparado para actuar adaptándose perfectamente a cada tipo de documento.
+
+En el caso de no indicar el tipo de documento en una página HTML, el navegador entra en lo que se llama Quirk mode (modo peculiar o modo no estándar), donde se activa un modo de retrocompatibilidad con páginas antiguas, que procesará de forma diferente muchas etiquetas HTML o propiedades CSS.
+
+
+Cuando hablamos de la etiqueta <head> de un documento HTML, muchas veces la denominamos cabecera HTML. Sin embargo, esta cabecera no es una parte visual de la página web, sino una parte de nuestro código HTML donde se incluyen ciertas etiquetas de metadatos, es decir, unas etiquetas que establecen ciertos datos que no tienen que verse necesariamente de forma visual.
+
+Algunos ejemplos de metadatos de un documento HTML podrían ser los siguientes:
+
+    Título de la página web (aparece en la pestaña del navegador). Esta etiqueta es obligatoria.
+    Descripción de la página (aparece en los resultados de Google)
+    Miniatura/preview de la página (aparece al poner enlace en redes sociales)
+    Icono de la página (aparece en la pestaña del navegador)
+
+La otra parte principal de un documento HTML es la etiqueta <body>. Todos los elementos visuales de una página se encuentran en el interior de la etiqueta <body>, por lo que es una de las partes más importantes de una página web. Esta sección va inmediatamente después del cierre de la etiqueta </head>.
+
+
+En definitiva, la estructura principal de un documento HTML debe ser, como minimo de algo similar a lo siguiente:
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Título del documento</title>
+  <meta charset="utf8">
+</head>
+<body>
+  ...
+</body>
+</html>
+
+
+En muchos editores, que disponen de una extensión llamada EMMET, basta con guardar el fichero con extensión .html y escribir ! y pulsar la tecla para que se nos autocomplete este fragmento de código base. Más adelante veremos algunas de las etiquetas anteriores que aún no se han mencionado.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
