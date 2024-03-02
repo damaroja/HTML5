@@ -1,0 +1,115 @@
+
+
+Atributo 	        Descripción
+name 	            Indica el nombre del campo. Útil para hacer referencia a la información almacenada.
+type 	            Indica la naturaleza de datos que se espera del usuario (texto, número, fechas, etc...).
+value 	            Indica el valor inicial que tendrá este campo de datos. Si se omite, está vacío.
+form 	            Asocia este campo con un formulario específico. Útil si necesitamos tenerlo fuera del <form>.
+list 	            En algunos <input> permite combinar con otra etiqueta para personalizarla. Lo veremos más adelante.
+placeholder 	    Indica una sugerencia al usuario antes de escribir el valor en el campo.
+size 	            Tamaño visual (aprox: número de carácteres) del campo de datos.
+autocomplete 	    Activa on o desactiva off el autocompletado para este campo. Activado por defecto.
+autofocus 	        Establece el foco (coloca el cursor) en este campo al cargar la página.
+
+
+
+VALUE
+------------------------------------------
+El atributo value se utiliza para dar un valor por defecto a un campo <input>. Tanto en este tipo de campos de entrada como en otros que veremos más adelante, podemos utilizar el atributo value para establecer un valor por defecto:
+
+<form method="post" action="/send/">
+  <input value="ManzDev">
+</form>
+
+Esto puede ser realmente útil cuando un campo, probablemente, vaya a tener un valor específico. Podemos indicárselo para ahorrar tiempo al usuario, ya que en el caso de querer otra opción, sólo tiene que borrar y corregirla.
+
+TYPE
+--------------------------------------------
+Para determinar la naturaleza de la información que se pretende obtener en cada campo de entrada de datos, se aconseja utilizar el atributo type, donde podremos indicar si los datos que esperamos por parte del usuario serán datos de texto, datos numéricos, fechas, etc. Si se omite el atributo type, se asume que es type="text".
+
+En primer lugar, si lo que queremos es guardar información de texto libremente, la opción más habitual es optar por utilizar el campo de entrada de datos <input type="text">. Este atributo es el que se utiliza en las etiquetas <input> por defecto si no indicamos ningún atributo type. Es un campo de texto ideal para fragmentos cortos de información: nombres, apellidos, información corta, etc...
+
+
+<form method="post" action="/send/">
+  Nombre:
+  <input name="nombre" autocomplete="off"
+    placeholder="Introduce tu nombre de usuario">
+</form>
+
+AUTOCOMPLETE
+----------------------------------------------
+Por defecto, los navegadores tienen en los campos <input> el autocompletado activado. Tenemos dos formas de desactivarlo:
+
+
+    Indicar el atributo autocomplete="off" en el <form>. Lo desactivará para todos los campos.
+    Indicar el atributo autocomplete="off" en los campos específicos a desactivar.
+
+El autocompletado aparece cuando no está establecido el atributo autocomplete o cuando tiene el valor on. Te mostrará otros valores introducidos en formularios con el mismo atributo name.
+
+PLACEHOLDER
+---------------------------------
+Placeholder: Es el texto que aparecerá a modo de sugerencia/ayuda para el usuario (en gris, ligeramente menos visible que el texto del campo). En cuanto el usuario escriba en el mismo, el mensaje desaparecerá. Sólo volvería a aparecer si el usuario decide borrar nuevamente la información que ha escrito en ese campo.
+
+
+TEXTOS CORTOS ESPECIFICOS
+----------------------------------------
+
+
+Por otro lado, en HTML5 se añaden nuevos tipos para etiquetas <input> como type="search", type="tel", type="url" o type="email". Aunque la idea es la misma que un campo de texto y en principio no notaremos ningún cambio, estos campos específicos tienen como objetivo hacer más semántico y sencillo el proceso de introducción de datos por parte del usuario.
+
+<form method="post" action="/send/">
+  URL: <input type="url" name="web" placeholder="https://pagina.com/">
+  Teléfono: <input type="tel" name="telefono" placeholder="+XX XXX XXXXXX">
+  Email: <input type="email" name="correo" placeholder="nombre@dominio.com">
+</form>
+
+
+El atributo type también permite el valor search, que es muy similar a los anteriores. Se utiliza para campos orientados a la búsqueda de palabras o textos en un sitio web, mostrando desde dispositivos móviles una X para borrar la palabra escrita con una sola pulsación, evitando el tener que borrar repetidamente varios carácteres y esperar a que termine.
+
+
+CONTRASEÑAS
+---------------------------------------
+
+La etiqueta <input> permite indicar en su atributo type el valor password para crear campos de texto orientados a almacenar información sensible como podrían ser contraseñas, claves o pins numéricos. Esto no lo convertiría en un campo más seguro técnicamente, sino que simplemente muestra puntos o asteriscos en lugar del texto visualmente, para protegerlo "visualmente" de ojos ajenos.
+
+<form name="formulario" method="post" action="/send/">
+  Usuario: <input type="text" name="nombre" placeholder="Por ejemplo, Juan">
+  Password: <input type="password" name="pass" placeholder="Contraseña">
+  <input type="hidden" name="informacion" value="72625">
+</form>
+
+Por otro lado también tenemos el tipo hidden, que se puede utilizar cuando queremos enviar información en el formulario, pero no queremos que el navegador lo muestre visualmente en el formulario, como por ejemplo un código numérico o una id informativa.
+
+
+COMPROBACION DE ORTOGRAFIA
+
+En todos estos campos, tanto etiquetas <input> como las etiquetas <textarea> que veremos más adelante, podemos utilizar un atributo denominado spellcheck mediante el cuál indicamos al navegador si debe revisar o no la ortografía del texto escrito en dicho elemento (en el cuál aparece una línea roja inferior cuando la palabra no se encuentra en el diccionario):
+
+<form method="post" action="/send/">
+  <input name="objeto-1" value="camion asul" spellcheck="true">
+  <input name="objeto-2" value="camion asul" spellcheck="false">
+</form>
+
+Si el atributo spellcheck está a true, el navegador comprobará la ortografía en cuanto pulses un espacio, pero si se encuentra a false no la comprobará. Si no se especifica el atributo, el navegador busca el atributo spellcheck en los elementos contenedores padres para saber como actuar, y si aún así tampoco lo encuentra, toma el valor por defecto true.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
