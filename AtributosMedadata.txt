@@ -1,0 +1,142 @@
+
+
+TITLE (METADATA)
+----------------
+
+
+Aunque se suele hacer sobre todo en las etiquetas de imágenes <img>, en la mayoría de las etiquetas HTML podemos indicar el atributo title para especificar un mensaje de texto que aparezca cuando el usuario detenga el ratón sobre el elemento un instante. Al usuario le aparece un pequeño aviso emergente, generalmente con fondo amarillo y letras negras, que muestra el texto en cuestión:
+
+<div>
+  <img src="gandalf.jpg"
+       alt="Gandalf el gris, utilizando un portátil para consultar su correo."
+       title="¡Este es Gandalf el gris!" />
+  <p>Mantén el ratón unos instantes sobre la imagen anterior.</p>
+</div>
+
+Es importante no confundir el atributo title con el atributo alt de las imágenes. Generalmente se confunden porque pueden tener objetivos parecidos, pero no tienen porque ser idénticos.
+
+    El atributo alt debe ser un texto alternativo que describa la imagen (en el caso de que no se pueda ver visualmente)
+    El atributo title puede describir la imagen, pero no tiene porque ser una descripción alternativa.
+
+De la misma forma, podemos utilizar el atributo title para otros elementos, como por ejemplo, etiquetas <a> (enlaces) u otras. Sin embargo, el usuario normalmente no se esperará que existe un tooltip en cualquier elemento, así que quizás convendría hacérselo saber de forma explícita.
+
+
+DATA- (METADATA)
+-----------------------
+
+En un documento HTML, la mayoría de los metadatos (información adicional) se incluyen en el interior de la etiqueta <head> del documento HTML. Sin embargo, también se pueden incluir metadatos en una etiqueta HTML a través de un atributo que comienza con el prefijo data-.
+
+De esta forma, podemos inventarnos cualquier atributo que contenga información, habitualmente orientada a utilizarse desde Javascript o CSS:
+
+
+<div id="social-networks">
+  <a href="https://twitter.com/Manz" data-subs="44000">Twitter</a>
+  <a href="https://youtube.com/@ManzDev" data-subs="10000">Youtube</a>
+  <a href="https://twitch.tv/ManzDev" data-subs="13000">Twitch</a>
+</div>
+
+Desde js podemos acceder a esta info esi:
+
+const links = document.querySelectorAll("#social-networks a");
+
+links[0].dataset.subs;              // 44000   o de esta otra:
+links[1].getAttribute("data-subs"); // 10000
+
+En la primera, accedemos a la propiedad .dataset donde tendremos una lista de propiedades dependiendo de los diferentes atributos con prefijo data- que tenga el elemento. Por otro lado, podemos también utilizar el método .getAttribute() del DOM.
+
+
+ACCESSKEY (METADATA)
+-----------------------------
+
+En HTML es posible añadir el atributo accesskey para indicar un atajo de teclado que puede pulsar el usuario para activar ese elemento. Observa el siguiente ejemplo, donde tenemos 4 elementos:
+
+<form>
+  <input accesskey="N" placeholder="Nombre (ALT+N)" />          <!-- Campo de datos -->
+  <input accesskey="A" placeholder="Apellidos (ALT+A)" />       <!-- Campo de datos -->
+  <a accesskey="L" href="https://manz.dev/">Enlace (ALT+L)</a>  <!-- Enlace HTML -->
+  <button accesskey="B">Botón (ALT+B)</button>                  <!-- Botón HTML -->
+</form>
+
+De esta forma, si pulsamos ALT+N, se colocará el foco en el primer campo de texto, si pulsamos ALT+L será como si hubieramos pulsado el enlace con el ratón y si pulsamos ALT+B se pulsará el botón.
+
+Sin embargo, una de las desventajas de este sistema, es que no está estandarizada la forma de acceder entre navegadores y sistemas operativos, lo que lo hacen un sistema poco intuitivo. 
+
+TITLE - (IDIOMA)
+--------------------------------
+
+Mediante el atributo lang podemos indicar el idioma del contenido de la etiqueta. El valor de dicho atributo tendrá que ser el código ISO 639-1 del idioma al que queremos hacer referencia. Aunque en principio podemos hacer esto en cualquier etiqueta HTML, es obligatorio hacerlo en la etiqueta <html> que es la etiqueta que abarca todo el documento.
+
+
+<!DOCTYPE html>
+<html lang="es">
+  ...
+</html>
+
+TRANLATE - (IDIOMA)
+-----------------------------------
+En las etiquetas HTML se puede indicar el atributo translate, el cuál acepta los valores yes y no. Por defecto, aunque este atributo no sea añadido en una etiqueta, el valor por defecto que tiene es yes. Por lo tanto, todas las etiquetas están marcadas como «traducibles».
+
+Si por ejemplo, tenemos un texto como el título de una obra, que no queremos que sea posible traducirlo, sino que queremos que conserve el texto original, podemos hacer lo siguiente:
+
+<p>
+  Hace algunos días fuí a ver la nueva película de <span translate="no">StarWars</span>.
+</p>
+
+De esta forma, le indicamos al navegador o a herramientas como Google Translate, que esa frase específica no se debe traducir porque es el título que queremos que aparezca siempre. Recuerda que por defecto, si no se indica el atributo translate en una etiqueta, se asume que tiene el valor yes por defecto.
+
+
+DIR - (IDIOMA)
+-------------------------------
+
+Existe un atributo dir que permite al desarrollador indicar la direccionalidad del texto en el documento. Esto es ideal para idiomas en los que se escribe o lee de derecha a izquierda, en lugar de izquierda a derecha. El valor por defecto de este atributo es ltr (left to right, de izquierda a derecha), pero podemos modificarlo y establecer el valor rtl (right to left, de derecha a izquierda):
+
+
+<p>Esto es un ejemplo de texto con direccionalidad de izquierda a derecha.</p>
+<p dir="rtl">Esto es un ejemplo de texto con direccionalidad de derecha a izquierda.</p>
+
+También es posible conseguir este efecto utilizando la propiedad CSS direction, que puede establecer su valor a ltr (por defecto) o a rtl.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
